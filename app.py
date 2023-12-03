@@ -3,10 +3,10 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 import os
 
-load_dotenv("config.env")
-uri = os.getenv("NEO4J_URI")
-user = os.getenv("NEO4J_USERNAME")
-password = os.getenv("NEO4J_PASSWORD")
+load_dotenv()
+uri = os.getenv("URI")
+user = os.getenv("USERNAME")
+password = os.getenv("PASSWORD")
 driver = GraphDatabase.driver(uri, auth=(user, password), database="neo4j")
 
 app = Flask(__name__)
